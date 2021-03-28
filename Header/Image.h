@@ -5,11 +5,19 @@ namespace FinalProject
 
 	class Image
 	{
-		nana::picture pic;
+		nana::paint::image image;
 
 	public:
+		Image() {
+
+		}
+
 		Image(char* pathToPic) {
-			
+			this->image = nana::paint::image(pathToPic);
+		}
+
+		auto getPic() {
+			return this->image;
 		}
 	};
 

@@ -12,20 +12,27 @@ using namespace FinalProject;
 // Lists
 std::vector<Card> cards;
 std::vector<Image> images;
+std::vector<nana::picture> pics;
 
 
 int main()
 {
+	// Create all images.
+	images.push_back(Image("AH.jpg"));
+	images.push_back(Image("2H.jpg"));
+	images.push_back(Image("3H.jpg"));
+	images.push_back(Image("4H.jpg"));
+	images.push_back(Image("5H.jpg"));
+	images.push_back(Image("6H.jpg"));
+	images.push_back(Image("7H.jpg"));
+	images.push_back(Image("8H.jpg"));
+	images.push_back(Image("9H.jpg"));
+	images.push_back(Image("10H.jpg"));
+	Image backImage("back.jpg");
+	
 	nana::form fm;
-	nana::size imageSize(100, 100);
-
-	nana::paint::graphics graphics(imageSize);
-	nana::paint::image pic("../Images/back.jpg");
-
-	pic.paste(graphics, nana::point(100,100));
-
-	
-	
+	nana::place plc(fm);
+	nana::picture back(fm);
 
 	// Create vector of cards with their identifying number.
 	int number = 0;
@@ -41,12 +48,25 @@ int main()
 
 	// Put them in rows and columns.
 	for (int i = 0; i < 20; i++) {
+		pics.push_back(nana::picture(fm));
 		printf("%d \n", cards[i].getNumber());
 	}
 
-	//fm.div("vert <<00><01><02><03>> <<10><11><12><13>> <<20><21><22><23>> <<30><31><32><33>> <<40><41><42><43>>");
+	plc.div("<cards grid=[4,5]>");
+	for (int i = 0; i < 20; i++) {
+		plc["cards"] << pics[i];
+	}
+	plc.collocate();
+
+	for (int i = 0; i < 20; i++) {
+		pics[i].load(backImage.getPic());
+		pics[i].stretchable(5, 5, 5, 5);
+	}
+
+	//back.load(backImage.getPic());
+	//back.stretchable(5, 5, 5, 5);
 	
-	fm.collocate();
+	
 	fm.show();
 	nana::exec();
 

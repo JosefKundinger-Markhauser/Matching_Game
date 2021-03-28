@@ -9,14 +9,15 @@ project ("Matching_Game")
 add_executable (Matching_Game "Source/MatchingGame.cpp" "Header/MatchingGame.h" "Header/Game.h" "Header/Card.h" "Header/Image.h")
 
 # Include the NANA library
-target_include_directories(Matching_Game PUBLIC "nana\\include")
+target_include_directories(Matching_Game PUBLIC "C:\\Users\\Josef\\Desktop\\Projects\\nana\\include\\")
+target_link_directories(Matching_Game PUBLIC "C:\\Users\\Josef\\Desktop\\Projects\\nana\\build\\bin")
+target_link_directories(Matching_Game PUBLIC "C:\\Users\\Josef\\Desktop\\Projects\\nana\\extrlib\\vc2019\\jpeg-9c")
 
 # Define compiler variable
 add_definitions(-D_SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING)
 add_definitions(-DNANA_ENABLE_AUDIO)
-add_definitions(-DNANA_ENABLE_JPEG)
+#add_definitions(-DNANA_ENABLE_JPEG)
 
 # Link NANA libraries
-target_link_libraries(Matching_Game "nana_v142_Debug_x64")
-
-target_link_directories(Matching_Game PUBLIC "nana\\build\\bin")
+target_link_libraries(Matching_Game "nana_v142_Release_x64")
+target_link_libraries(Matching_Game "libjpeg.MDd.x64")
