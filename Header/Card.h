@@ -6,11 +6,13 @@ namespace FinalProject
 	{
 		int row;
 		int column;
-		int number;
+		int imageIndex;
+		int gridIndex;
 
 	public:
-		Card(int number) {
-			this->number = number;
+		Card(int imageIndex) {
+			this->imageIndex = imageIndex;
+			this->gridIndex = 0;
 			this->row = 0;
 			this->column = 0;
 		}
@@ -31,8 +33,16 @@ namespace FinalProject
 			return this->column;
 		}
 
-		int getNumber() {
-			return this->number;
+		int getImageIndex() {
+			return this->imageIndex;
+		}
+
+		void setGridIndex(int index) {
+			this->gridIndex = index;
+		}
+
+		int getGridIndex() {
+			return this->gridIndex;
 		}
 
 	};
