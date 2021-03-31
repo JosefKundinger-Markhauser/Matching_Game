@@ -8,6 +8,7 @@ namespace FinalProject
 		int column;
 		int imageIndex;
 		int gridIndex;
+		int state;
 
 	public:
 		Card(int imageIndex) {
@@ -15,6 +16,7 @@ namespace FinalProject
 			this->gridIndex = 0;
 			this->row = 0;
 			this->column = 0;
+			this->state = 0;
 		}
 
 		void setRow(int row) {
@@ -43,6 +45,22 @@ namespace FinalProject
 
 		int getGridIndex() {
 			return this->gridIndex;
+		}
+
+		void setFaceDown() {
+			this->state = 0;
+		}
+
+		void setFaceUp() {
+			this->state = 1;
+		}
+
+		void setMatched() {
+			this->state = -1;
+		}
+
+		int getState() {
+			return this->state;
 		}
 
 	};

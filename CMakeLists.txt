@@ -6,7 +6,7 @@ cmake_minimum_required (VERSION 3.8)
 project ("MatchingGame")
 
 # Add source to this project's executable.
-add_executable (MatchingGame "Source/MatchingGame.cpp" "Header/MatchingGame.h" "Header/Game.h" "Header/Card.h" "Header/Image.h")
+add_executable (MatchingGame "Source/MatchingGame.cpp" "Header/MatchingGame.h" "Header/Game.h" "Header/Card.h" "Header/Image.h" )
 
 # Include the NANA library
 target_include_directories(MatchingGame PUBLIC "C:\\aa\\nana\\include")

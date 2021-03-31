@@ -17,8 +17,8 @@ namespace FinalProject
 			this->numTurns++;
 		}
 
-		int getTurn() {
-			return numTurns;
+		int getTurns() {
+			return this->numTurns;
 		}
 
 		void gotMatch() {
@@ -32,6 +32,11 @@ namespace FinalProject
 			else {
 				return false;
 			}
+		}
+
+		void reset() {
+			this->numMatches = 0;
+			this->numTurns = 0;
 		}
 
 	};
